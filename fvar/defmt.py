@@ -9,6 +9,7 @@ class DeFmt:
     def __init__(self, fmt):
         self.vars = None
         self.done = False
+        self.line = None
         self.lineno = -1
         self.lines = fmt.splitlines()
 

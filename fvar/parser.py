@@ -5,13 +5,13 @@ from .defmt import DeFmt
 def matchline(defmt, lns):
     defmt.next()
     if lns.next() is None:
-        raise MissingValues(defmt, lns)
+        raise MissingValue(defmt, lns)
 
     obj = {}
     for var in defmt.vars:
         val = lns.getvar(var.size)
         if val is None:
-            raise MissingValues(defmt, lns)
+            raise MissingValue(defmt, lns)
 
         obj[var.name] = val
 
