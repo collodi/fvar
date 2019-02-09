@@ -5,7 +5,9 @@ from tempfile import NamedTemporaryFile
 
 fmt = '''\
 <first variable> <second one>
+# hi hi
 <next line thing>
+# hello there
 '''
 
 filename = None

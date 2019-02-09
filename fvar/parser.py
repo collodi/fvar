@@ -3,7 +3,6 @@ from .lines import Lines
 from .defmt import DeFmt
 
 def matchline(defmt, lns):
-    defmt.next()
     if lns.next() is None:
         raise MissingValue(defmt, lns)
 
@@ -22,7 +21,7 @@ def parse(fmt, filename):
     defmt = DeFmt(fmt)
 
     obj = {}
-    while not defmt.done:
+    for _ in defmt:
         vals = matchline(defmt, f)
         obj.update(vals)
 

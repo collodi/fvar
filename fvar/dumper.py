@@ -4,7 +4,7 @@ from .exceptions import *
 from .defmt import DeFmt
 
 def matchline(defmt, data):
-    ln = defmt.next()
+    ln = defmt.line
     for var in defmt.vars:
         if var.name not in data:
             raise MissingVariable(defmt, var)
@@ -22,7 +22,7 @@ def dump(fmt, data, filename=None):
     else:
         out = open(filename, 'w')
 
-    while not defmt.done:
+    for _ in defmt:
         ln = matchline(defmt, data)
         print(ln, file=out)
 

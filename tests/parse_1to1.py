@@ -5,8 +5,9 @@ from tempfile import NamedTemporaryFile
 
 fmt = '''\
 <first variable> <second one>
+# don't do anything for this line
+# <variable?>
 <next line thing>
-<error?>
 '''
 
 text = '''\
