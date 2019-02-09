@@ -11,7 +11,7 @@ Python package for importing/exporting variable-formatted files
 # parse_example.py
 import fvar
 
-fmtstr = '''
+fmtstr = '''\
 # this line will be ignored
 <x> <y>
 <z>'''
